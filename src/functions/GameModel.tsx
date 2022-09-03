@@ -1,4 +1,4 @@
-import { GAME_CLOCK, BLOCK_SIDE_LENGTH, ROWS, COLS, SCORE_WORTH, COLORS } from "./constants";
+import { ROWS, COLS } from "./constants";
 import Piece from "./Piece";
 
 export default class GameModel {

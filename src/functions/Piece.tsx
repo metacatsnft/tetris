@@ -1,4 +1,4 @@
-import { SHAPES, COLORS, COLS } from "./constants";
+import { COLS } from "./constants";
 import GameModel from "./GameModel";
 
 interface IShape {
