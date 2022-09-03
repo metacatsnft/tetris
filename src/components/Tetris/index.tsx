@@ -20,7 +20,7 @@ export default function TetrisGame() {
      * Memoize the starting grid, this reduces computations to one iteration and prevents this expensive action from reoccuring on each render.
      */
     const startingGrid: any = useMemo(() => {
-        return [new Array(20).fill(new Array(10).fill([]))];
+        return [...new Array(20).fill(new Array(10).fill([]))];
     }, []);
 
     const [grid, setGrid] = useState<number[][]>(startingGrid);
