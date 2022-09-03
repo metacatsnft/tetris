@@ -109,7 +109,7 @@ export default class Piece {
 
     renderPiece() {
         this.shape.map((row, i) => {
-            row.map((cell, j) => {
+            return row.forEach((cell, j) => {
                 if (cell > 0) {
                     this.setGrid(this.model.grid);
                 }

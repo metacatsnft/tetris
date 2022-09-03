@@ -1,8 +1,7 @@
 import React, { useMemo, useState, useEffect, useCallback } from "react";
 import Piece from "../../functions/Piece";
 import Game from "../../functions/Tetris";
-import "./index.scss";
-import TetrisPiece from "./tetris_piece";
+import TetrisPiece from "../TetrisPiece";
 
 const names = [
     "shape0",
@@ -34,6 +33,7 @@ export default function TetrisGame() {
         (newGrid: number[][]) => {
             setGrid([...newGrid]);
         },
+        // eslint-disable-next-line
         [grid]
     );
 
@@ -49,9 +49,16 @@ export default function TetrisGame() {
                 {piece !== null ? <TetrisPiece piece={piece} /> : null}
                 {grid.map((row, i) => {
                     return row.map((cell, j) => {
-                        return <div className={`${cell > 0 ? 'piece-cell' : 'grid-cell'} ${names[cell]}`} key={`${i}-${j}`} />;
+                        return (
+                            <div
+                                className={`${cell > 0 ? "piece-cell" : "grid-cell"} ${
+                                    names[cell]
+                                }`}
+                                key={`${i}-${j}`}
+                            />
+                        );
                     });
-                })}{" "}
+                })}
             </div>
         </div>
     );

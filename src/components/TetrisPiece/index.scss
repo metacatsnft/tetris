@@ -1,3 +1,4 @@
+
 .tetris-piece {
     top: 0;
     left: 0;
@@ -5,37 +6,6 @@
     position: absolute;
 }
 
-.shape0 {
-    background: #1e272e;
-}
-
-.shape1 {
-    background: #48dbfb;
-}
-
-.shape2 {
-    background: #e84393;
-}
-
-.shape3 {
-    background: #6c5ce7;
-}
-
-.shape4 {
-    background: #f9ca24;
-}
-
-.shape5 {
-    background: #f0932b;
-}
-
-.shape6 {
-    background: #05c46b;
-}
-
-.shape7 {
-    background: #3c40c6;
-}
 
 .s-shape {
     height: 120px;
@@ -100,6 +70,41 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+
+.shape0 {
+    background: #1e272e;
+
+    //box-shadow: inset #055f73 0px 0px 4px 1px;
+}
+
+.shape1 {
+    background: #48dbfb;
+}
+
+.shape2 {
+    background: #e84393;
+}
+
+.shape3 {
+    background: #6c5ce7;
+}
+
+.shape4 {
+    background: #f9ca24;
+}
+
+.shape5 {
+    background: #f0932b;
+}
+
+.shape6 {
+    background: #05c46b;
+}
+
+.shape7 {
+    background: #3c40c6;
+}
+
 .grid {
     display: grid;
     position: relative;
@@ -113,7 +118,6 @@
 .piece-cell {
     border: 1px solid #2d3436;
 }
-
 .grid-cell {
-    border: 1px solid transparent;
+    border: 1px solid transparent;;
 }

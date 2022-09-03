@@ -1,9 +1,9 @@
 import React from "react";
-import Router from "./router";
+import Tetris from "./pages/Tetris";
 import "./App.scss";
 
 const App = (): JSX.Element => {
-    return <Router />;
+    return <Tetris />;
 };
 
 export default App;

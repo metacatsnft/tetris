@@ -13,17 +13,9 @@ export default class GameModel {
     }
 
     makeStartingGrid() {
-        let grid: number[][] = [];
-
-        for (var i = 0; i < ROWS; i++) {
-            grid.push([]);
-            for (var j = 0; j < COLS; j++) {
-                grid[grid.length - 1].push(0);
-            }
-        }
-
-        return grid;
+        return [...new Array(20).fill(new Array(10).fill([0]))];
     }
+
     collision(x: any, y: any, candidate = null) {
         if (this.fallingPiece) {
             const shape = candidate || this.fallingPiece.shape;
@@ -45,19 +37,10 @@ export default class GameModel {
                 }
             }
         }
-        //this.setGrid(this.grid);
         return false;
     }
 
     renderGameState() {
-        for (let i = 0; i < this.grid.length; i++) {
-            for (let j = 0; j < this.grid[i].length; j++) {
-                let cell = this.grid[i][j];
-                //this.ctx.fillStyle = COLORS[cell];
-                //this.ctx.fillRect(j, i, 1, 1);
-            }
-        }
-
         if (this.fallingPiece !== null) {
             this.fallingPiece.renderPiece();
         }
@@ -72,7 +55,7 @@ export default class GameModel {
             const x = this.fallingPiece.x;
             const y = this.fallingPiece.y;
             shape.map((row, i) => {
-                row.map((cell, j) => {
+                return row.forEach((cell, j) => {
                     let p = x + j;
                     let q = y + i;
                     if (p >= 0 && p < COLS && q < ROWS && cell > 0) {
@@ -93,7 +76,6 @@ export default class GameModel {
     }
 
     move(right: any) {
-        //this.setGrid(this.grid);
         if (this.fallingPiece === null) {
             return;
         }
